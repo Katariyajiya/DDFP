@@ -1,0 +1,52 @@
+import java.util.HashMap;
+
+//October 2nd 2025
+//Two Pointer Technique
+public class Day33 {
+    public static void main(String[] args) {
+        int[] numbers = {2,7,11,15};
+        System.out.println(twoSum(numbers,9));
+
+
+    }
+
+    // 2 Sum
+    public static int[] twoSum(int[] nums, int target) {
+
+    //HashMap Technique
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for (int i=0;i< nums.length;i++){
+            int diff = target-nums[i];
+
+            if (map.containsKey(diff)){
+
+                return new int[]{map.getOrDefault(diff,i)};
+            }
+            map.put(nums[i],i);
+        }
+        return new int[0];
+        
+     //Sorting Technique
+        
+      int[] arr = new int[2];
+
+      int l=0;
+      int r=nums.length-1;
+      int sum=0;
+
+      while (l<r){
+          sum=nums[l]+nums[r];
+
+          if (sum>target) r--;
+          else if (sum<target) l++;
+          else {
+              arr[0]=l;
+              arr[1]=r;
+              break;
+          }
+      }
+        System.out.println(arr[0]+" "+arr[1]);
+      return arr;
+    }
+}
