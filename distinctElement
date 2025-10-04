@@ -39,7 +39,29 @@ class Solution {
         // }
         
         // return ans;
-        
+
+
+   //Brute Force Approach --->
+//        ArrayList<Integer> list = new ArrayList<>();
+//
+//        HashSet<Integer> map = new HashSet<>();
+//
+//        for (int i=0;i<=arr.length-k;i++){
+//            int l=i;
+//            int count=0;
+//            while (l<=i+k-1){
+//                if (map.contains(arr[l])) l++;
+//                else {
+//                    count++;
+//                    map.add(arr[l]);
+//                    l++;
+//                }
+//            }
+//            list.add(count);
+//            map.clear();
+//        }
+//
+//        return list;
         
     }
 }
