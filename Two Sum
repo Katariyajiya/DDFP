@@ -10,7 +10,7 @@ public class Day33 {
 
     }
 
-    // 2 Sum
+    // 2 Sum ->
     public static int[] twoSum(int[] nums, int target) {
 
     //HashMap Technique
