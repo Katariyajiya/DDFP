@@ -1,0 +1,18 @@
+class Solution {
+
+     public static void main(String[] args) {
+        System.out.println(power(2.0, -3));
+        System.out.println(power(5.0, 3));
+    }
+
+    double power(double b, int e) {
+       if(e==0) return 1;
+       if(e<0) return 1/power(b,-e);
+       
+       double half=power(b,e/2);
+       if(e%2==0) return half*half;
+       else{
+           return half*half*b;
+       }
+    }
+}
