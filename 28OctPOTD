@@ -1,0 +1,28 @@
+class Solution {
+    public static int countValidSelections(int[] nums) {
+      int count=0;
+        for (int i=0;i< nums.length;i++){
+            if (nums[i]==0){
+                if (solve(nums,i+1,+1)==true) count++;
+                if (solve(nums,i-1,-1)==true) count++;
+            }
+    }
+        return count;
+    }
+    public static boolean solve(int[] nums,int pos,int direction){
+       // int i=0;
+        int[] temp=nums.clone();
+        while (pos>=0&pos<temp.length){
+            if (temp[pos]==0) pos=pos+direction;
+            else {
+                temp[pos]--;
+                direction=-direction;
+                pos=pos+direction;
+            }
+        }
+        for (int i=0;i< temp.length;i++){
+            if (temp[i]>0) return false;
+        }
+      return true;
+    }
+    }
